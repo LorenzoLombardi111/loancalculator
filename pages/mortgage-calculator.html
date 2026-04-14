@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Mortgage Payment Calculator — freeloancalc.app</title>
+    <meta name="description" content="Calculate your mortgage payment, total interest, and amortization schedule for free. No signup, no ads.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freeloancalc.app/mortgage-calculator">
+    <meta name="theme-color" content="#faf9f6">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="Free Mortgage Payment Calculator — freeloancalc.app">
+    <meta property="og:description" content="Calculate your mortgage payment, total interest, and amortization schedule for free. No signup, no ads.">
+    <meta property="og:image" content="https://freeloancalc.app/og-image.svg">
+    <meta property="og:url" content="https://freeloancalc.app/mortgage-calculator">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Mortgage Payment Calculator — freeloancalc.app">
+    <meta name="twitter:description" content="Calculate your mortgage payment, total interest, and amortization schedule for free. No signup, no ads.">
+    <meta name="twitter:image" content="https://freeloancalc.app/og-image.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "Article", "headline": "Free Mortgage Payment Calculator", "description": "Calculate your mortgage payment, total interest, and amortization schedule for free.", "url": "https://freeloancalc.app/mortgage-calculator", "publisher": { "@type": "Organization", "name": "freeloancalc.app", "url": "https://freeloancalc.app/" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "How do I calculate my mortgage payment?", "acceptedAnswer": { "@type": "Answer", "text": "Enter your home loan amount, annual interest rate, and term (15 or 30 years) into freeloancalc.app. The calculator instantly shows your monthly payment, total interest over the life of the loan, and a full amortization schedule." } },
+        { "@type": "Question", "name": "What is a typical mortgage interest rate?", "acceptedAnswer": { "@type": "Answer", "text": "Mortgage rates vary by country, credit score, and market conditions. As of 2026, US 30-year fixed rates typically range from 5.5% to 7.5%. Use freeloancalc.app to compare how different rates affect your monthly payment and total cost." } },
+        { "@type": "Question", "name": "Should I choose a 15-year or 30-year mortgage?", "acceptedAnswer": { "@type": "Answer", "text": "A 15-year mortgage has higher monthly payments but significantly less total interest. A 30-year mortgage has lower monthly payments but costs more over time. Use freeloancalc.app to compare both options side by side using the preset buttons." } },
+        { "@type": "Question", "name": "How much can I save with extra mortgage payments?", "acceptedAnswer": { "@type": "Answer", "text": "Even small extra payments dramatically reduce total interest. For example, adding $200/month to a $300,000 30-year mortgage at 6.5% saves over $80,000 in interest and pays off the loan 6 years early. Use freeloancalc.app's extra payment field to see your exact savings." } },
+        { "@type": "Question", "name": "Does freeloancalc.app work for mortgages in Europe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. freeloancalc.app supports EUR, GBP, CHF, SEK, NOK, DKK, PLN, and other currencies. The amortization formula is universal — just enter your mortgage details in your local currency." } },
+        { "@type": "Question", "name": "Can I export my mortgage amortization schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click the CSV button in the header to download your complete month-by-month amortization schedule as a spreadsheet-compatible CSV file." } }
+    ] }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeloancalc.app/" }, { "@type": "ListItem", "position": 2, "name": "Mortgage Calculator", "item": "https://freeloancalc.app/mortgage-calculator" } ] }
+    </script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #faf9f6; --surface: #f4f2ee; --border: #e8e4dd; --text-primary: #1a1917; --text-secondary: #6b6760; --text-muted: #9e9b96; --accent: #C49A2A; --accent-hover: #A8831F; --accent-text: #ffffff; --font-body: 'Lora', serif; --font-ui: 'DM Sans', sans-serif; }
+        html.dark { --bg: #141412; --surface: #1e1c1a; --border: #2e2b27; --text-primary: #f0ede8; --text-secondary: #9e9b96; --text-muted: #6b6760; --accent: #D4A835; --accent-hover: #C49A2A; --accent-text: #ffffff; }
+        html { font-size: 15px; line-height: 1.6; } body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); }
+        .header { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 100; }
+        .header-brand { font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--accent); text-decoration: none; }
+        .theme-toggle { font-family: var(--font-ui); font-size: 13px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px 12px; cursor: pointer; color: var(--text-secondary); transition: all 0.15s ease; } .theme-toggle:hover { background: var(--border); }
+        .breadcrumb { font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); padding: 12px 24px; max-width: 800px; margin: 0 auto; } .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .landing-content { max-width: 800px; margin: 0 auto; padding: 32px 24px 64px; } .landing-content h1 { font-size: 32px; font-weight: 700; margin-bottom: 24px; line-height: 1.3; } .landing-content h2 { font-size: 22px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; } .landing-content p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .cta-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 32px; text-align: center; margin: 32px 0; } .cta-box h3 { font-family: var(--font-ui); font-size: 18px; font-weight: 600; margin-bottom: 12px; } .cta-box p { color: var(--text-muted); margin-bottom: 16px; }
+        .cta-btn { font-family: var(--font-ui); font-size: 15px; font-weight: 600; background: var(--accent); color: var(--accent-text); border: none; border-radius: 8px; padding: 12px 24px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.15s ease; } .cta-btn:hover { background: var(--accent-hover); }
+        details { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 8px; } summary { font-family: var(--font-ui); font-weight: 500; cursor: pointer; } details p { margin-top: 12px; margin-bottom: 0; }
+        .landing-footer { text-align: center; padding: 32px 24px; font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
+        .suite-badge { position: fixed; bottom: 16px; right: 16px; font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); text-decoration: none; }
+        @media (max-width: 768px) { .landing-content h1 { font-size: 24px; } .landing-content { padding: 24px 16px 48px; } .suite-badge .badge-prefix { display: none; } }
+    </style>
+</head>
+<body>
+    <header class="header"><a href="/" class="header-brand">freeloancalc.app</a><button class="theme-toggle" id="themeToggle">☀️</button></header>
+    <nav class="breadcrumb"><a href="/">Home</a> › Mortgage Calculator</nav>
+    <article class="landing-content">
+        <h1>Free Mortgage Payment Calculator — See Your Monthly Payment Instantly</h1>
+        <p>Buying a home is the biggest financial decision most people make. freeloancalc.app helps you understand the true cost of your mortgage before you sign anything. Enter your home loan amount, interest rate, and term to see your exact monthly payment, total interest over the life of the loan, and a complete month-by-month amortization schedule. freeloancalc.app works for mortgages in any currency — USD, EUR, GBP, CHF, and 11 more — so whether you are buying in New York, London, or Zurich, you get accurate numbers instantly.</p>
+
+        <h2>How do I use freeloancalc.app for my mortgage?</h2>
+        <p>Click the "Mortgage 30yr" or "Mortgage 15yr" preset button to load typical mortgage settings. Adjust the loan amount to match your home price minus down payment. Enter the interest rate your lender quoted. freeloancalc.app instantly shows your monthly payment, total interest, payoff date, and full amortization schedule. Try adding an extra monthly payment to see how much you can save.</p>
+
+        <h2>How much does a 30-year mortgage really cost?</h2>
+        <p>On a $300,000 mortgage at 6.5%, your monthly payment is about $1,896. But over 30 years, you pay $382,634 in interest — more than the original loan amount. This is why understanding total cost matters. freeloancalc.app shows you the full picture with a visual breakdown of principal versus interest, so you can make informed decisions about loan terms and extra payments.</p>
+
+        <h2>15-year vs 30-year mortgage — which saves more?</h2>
+        <p>A 15-year mortgage at 6% on $300,000 costs $2,532/month but only $155,683 in total interest. The same loan over 30 years costs $1,799/month but $347,515 in total interest — more than double. Use the preset buttons on freeloancalc.app to compare both options instantly and decide what fits your budget.</p>
+
+        <div class="cta-box">
+            <h3>Calculate Your Mortgage — Free, No Sign-Up</h3>
+            <p>All processing happens in your browser. Your financial data never leaves your device.</p>
+            <a href="/" class="cta-btn">Open Mortgage Calculator</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <details><summary>How do I calculate my mortgage payment?</summary><p>Enter your home loan amount, annual interest rate, and term (15 or 30 years) into freeloancalc.app. The calculator instantly shows your monthly payment, total interest over the life of the loan, and a full amortization schedule.</p></details>
+        <details><summary>What is a typical mortgage interest rate?</summary><p>Mortgage rates vary by country, credit score, and market conditions. As of 2026, US 30-year fixed rates typically range from 5.5% to 7.5%. Use freeloancalc.app to compare how different rates affect your monthly payment and total cost.</p></details>
+        <details><summary>Should I choose a 15-year or 30-year mortgage?</summary><p>A 15-year mortgage has higher monthly payments but significantly less total interest. A 30-year mortgage has lower monthly payments but costs more over time. Use freeloancalc.app to compare both options side by side using the preset buttons.</p></details>
+        <details><summary>How much can I save with extra mortgage payments?</summary><p>Even small extra payments dramatically reduce total interest. For example, adding $200/month to a $300,000 30-year mortgage at 6.5% saves over $80,000 in interest and pays off the loan 6 years early. Use freeloancalc.app's extra payment field to see your exact savings.</p></details>
+        <details><summary>Does freeloancalc.app work for mortgages in Europe?</summary><p>Yes. freeloancalc.app supports EUR, GBP, CHF, SEK, NOK, DKK, PLN, and other currencies. The amortization formula is universal — just enter your mortgage details in your local currency.</p></details>
+        <details><summary>Can I export my mortgage amortization schedule?</summary><p>Yes. Click the CSV button in the header to download your complete month-by-month amortization schedule as a spreadsheet-compatible CSV file.</p></details>
+    </article>
+    <footer class="landing-footer">&copy; freeloancalc.app</footer>
+    <a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener"><span class="badge-prefix">by </span>freesuite.app</a>
+    <script>(() => { const t=document.getElementById('themeToggle'); const g=()=>localStorage.getItem('suite_theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); const a=(v)=>{document.documentElement.classList.toggle('dark',v==='dark');t.textContent=v==='dark'?'🌙':'☀️';localStorage.setItem('suite_theme',v);}; a(g()); t.addEventListener('click',()=>a(document.documentElement.classList.contains('dark')?'light':'dark')); })();</script>
+</body>
+</html>

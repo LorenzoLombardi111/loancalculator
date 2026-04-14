@@ -1,0 +1,9 @@
+{
+  "name": "freeloancalc.app",
+  "short_name": "Loan Calc",
+  "background_color": "#faf9f6",
+  "theme_color": "#faf9f6",
+  "display": "standalone",
+  "start_url": "/",
+  "categories": ["finance", "utilities", "productivity"]
+}

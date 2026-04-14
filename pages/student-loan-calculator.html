@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Student Loan Calculator — freeloancalc.app</title>
+    <meta name="description" content="Calculate student loan payments, total interest, and repayment schedule for free. Plan your education debt.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freeloancalc.app/student-loan-calculator">
+    <meta name="theme-color" content="#faf9f6">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta property="og:title" content="Free Student Loan Calculator — freeloancalc.app">
+    <meta property="og:description" content="Calculate student loan payments, total interest, and repayment schedule for free. Plan your education debt.">
+    <meta property="og:image" content="https://freeloancalc.app/og-image.svg">
+    <meta property="og:url" content="https://freeloancalc.app/student-loan-calculator">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Student Loan Calculator — freeloancalc.app">
+    <meta name="twitter:description" content="Calculate student loan payments, total interest, and repayment schedule for free. Plan your education debt.">
+    <meta name="twitter:image" content="https://freeloancalc.app/og-image.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "Article", "headline": "Free Student Loan Calculator", "description": "Calculate student loan payments, total interest, and repayment schedule for free.", "url": "https://freeloancalc.app/student-loan-calculator", "publisher": { "@type": "Organization", "name": "freeloancalc.app", "url": "https://freeloancalc.app/" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "How do I calculate my student loan payment?", "acceptedAnswer": { "@type": "Answer", "text": "Enter your total student loan balance, interest rate, and repayment term into freeloancalc.app. The calculator instantly shows your monthly payment, total interest, and complete repayment schedule. Use the Student 10yr preset for standard federal loan settings." } },
+        { "@type": "Question", "name": "What is the standard repayment term for student loans?", "acceptedAnswer": { "@type": "Answer", "text": "The standard US federal student loan repayment term is 10 years (120 payments). Private student loans vary from 5 to 20 years. freeloancalc.app lets you compare any term length to find the best fit for your budget." } },
+        { "@type": "Question", "name": "How much interest will I pay on my student loans?", "acceptedAnswer": { "@type": "Answer", "text": "On a $40,000 student loan at 5.5% over 10 years, you will pay about $12,322 in total interest. That means the education actually costs $52,322. freeloancalc.app shows the complete breakdown so you can plan accordingly." } },
+        { "@type": "Question", "name": "Should I make extra payments on my student loans?", "acceptedAnswer": { "@type": "Answer", "text": "If your loans have no prepayment penalty (most don't), extra payments reduce total interest significantly. Adding $100/month to a $40,000 student loan at 5.5% saves about $2,800 in interest and pays it off 2 years early. Use freeloancalc.app to model your specific scenario." } },
+        { "@type": "Question", "name": "Does freeloancalc.app work for student loans outside the US?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. freeloancalc.app supports 15 currencies and the amortization formula is universal. Enter your education loan details in any supported currency for accurate calculations." } },
+        { "@type": "Question", "name": "Can I compare different student loan repayment strategies?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Change the term length or add extra payments to compare different strategies. For example, compare a 10-year standard plan versus an aggressive 5-year payoff. freeloancalc.app updates instantly as you adjust inputs." } }
+    ] }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freeloancalc.app/" }, { "@type": "ListItem", "position": 2, "name": "Student Loan Calculator", "item": "https://freeloancalc.app/student-loan-calculator" } ] }
+    </script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #faf9f6; --surface: #f4f2ee; --border: #e8e4dd; --text-primary: #1a1917; --text-secondary: #6b6760; --text-muted: #9e9b96; --accent: #C49A2A; --accent-hover: #A8831F; --accent-text: #ffffff; --font-body: 'Lora', serif; --font-ui: 'DM Sans', sans-serif; }
+        html.dark { --bg: #141412; --surface: #1e1c1a; --border: #2e2b27; --text-primary: #f0ede8; --text-secondary: #9e9b96; --text-muted: #6b6760; --accent: #D4A835; --accent-hover: #C49A2A; --accent-text: #ffffff; }
+        html { font-size: 15px; line-height: 1.6; } body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); }
+        .header { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 100; }
+        .header-brand { font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--accent); text-decoration: none; }
+        .theme-toggle { font-family: var(--font-ui); font-size: 13px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px 12px; cursor: pointer; color: var(--text-secondary); transition: all 0.15s ease; } .theme-toggle:hover { background: var(--border); }
+        .breadcrumb { font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); padding: 12px 24px; max-width: 800px; margin: 0 auto; } .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .landing-content { max-width: 800px; margin: 0 auto; padding: 32px 24px 64px; } .landing-content h1 { font-size: 32px; font-weight: 700; margin-bottom: 24px; line-height: 1.3; } .landing-content h2 { font-size: 22px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; } .landing-content p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .cta-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 32px; text-align: center; margin: 32px 0; } .cta-box h3 { font-family: var(--font-ui); font-size: 18px; font-weight: 600; margin-bottom: 12px; } .cta-box p { color: var(--text-muted); margin-bottom: 16px; }
+        .cta-btn { font-family: var(--font-ui); font-size: 15px; font-weight: 600; background: var(--accent); color: var(--accent-text); border: none; border-radius: 8px; padding: 12px 24px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.15s ease; } .cta-btn:hover { background: var(--accent-hover); }
+        details { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 8px; } summary { font-family: var(--font-ui); font-weight: 500; cursor: pointer; } details p { margin-top: 12px; margin-bottom: 0; }
+        .landing-footer { text-align: center; padding: 32px 24px; font-family: var(--font-ui); font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
+        .suite-badge { position: fixed; bottom: 16px; right: 16px; font-family: var(--font-ui); font-size: 11px; color: var(--text-muted); text-decoration: none; }
+        @media (max-width: 768px) { .landing-content h1 { font-size: 24px; } .landing-content { padding: 24px 16px 48px; } .suite-badge .badge-prefix { display: none; } }
+    </style>
+</head>
+<body>
+    <header class="header"><a href="/" class="header-brand">freeloancalc.app</a><button class="theme-toggle" id="themeToggle">☀️</button></header>
+    <nav class="breadcrumb"><a href="/">Home</a> › Student Loan Calculator</nav>
+    <article class="landing-content">
+        <h1>Free Student Loan Calculator — Plan Your Education Debt Repayment</h1>
+        <p>Student loans are the second-largest category of consumer debt. freeloancalc.app helps you understand exactly what your student loans will cost and how long it will take to pay them off. Enter your total student loan balance, interest rate, and repayment term to see your monthly payment, total interest, and complete repayment schedule. freeloancalc.app includes extra payment modeling so you can see how much you save by putting even a small additional amount toward your loans each month. No signup, no ads, and no financial data ever leaves your browser.</p>
+
+        <h2>How to use freeloancalc.app for student loans</h2>
+        <p>Click the "Student 10yr" preset to load standard student loan settings ($40,000 at 5.5% over 10 years). Adjust the amount to match your actual balance. If you have multiple student loans, add up the balances and use the weighted average interest rate, or calculate each loan separately. The amortization schedule shows you exactly how each payment splits between principal and interest month by month.</p>
+
+        <h2>The true cost of student loans</h2>
+        <p>On a $40,000 student loan at 5.5% over 10 years, your monthly payment is $434. But you pay $12,322 in total interest, making the actual cost $52,322. If you extend to 20 years, the monthly payment drops to $275, but total interest jumps to $25,925. freeloancalc.app shows these numbers instantly so you can make an informed decision about your repayment strategy.</p>
+
+        <h2>How extra payments accelerate student loan payoff</h2>
+        <p>Extra payments are the most powerful tool for reducing student loan costs. Adding $100/month to a $40,000 loan at 5.5% saves $2,800 in interest and pays off the loan 2 years early. Adding $200/month saves $4,600 and pays it off 3.5 years early. Use the extra payment field on freeloancalc.app to find the right amount for your budget.</p>
+
+        <div class="cta-box">
+            <h3>Calculate Your Student Loan — Free, No Sign-Up</h3>
+            <p>All processing happens in your browser. Your financial data never leaves your device.</p>
+            <a href="/" class="cta-btn">Open Student Loan Calculator</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <details><summary>How do I calculate my student loan payment?</summary><p>Enter your total student loan balance, interest rate, and repayment term into freeloancalc.app. The calculator instantly shows your monthly payment, total interest, and complete repayment schedule. Use the Student 10yr preset for standard federal loan settings.</p></details>
+        <details><summary>What is the standard repayment term for student loans?</summary><p>The standard US federal student loan repayment term is 10 years (120 payments). Private student loans vary from 5 to 20 years. freeloancalc.app lets you compare any term length to find the best fit for your budget.</p></details>
+        <details><summary>How much interest will I pay on my student loans?</summary><p>On a $40,000 student loan at 5.5% over 10 years, you will pay about $12,322 in total interest. That means the education actually costs $52,322. freeloancalc.app shows the complete breakdown so you can plan accordingly.</p></details>
+        <details><summary>Should I make extra payments on my student loans?</summary><p>If your loans have no prepayment penalty (most don't), extra payments reduce total interest significantly. Adding $100/month to a $40,000 student loan at 5.5% saves about $2,800 in interest and pays it off 2 years early. Use freeloancalc.app to model your specific scenario.</p></details>
+        <details><summary>Does freeloancalc.app work for student loans outside the US?</summary><p>Yes. freeloancalc.app supports 15 currencies and the amortization formula is universal. Enter your education loan details in any supported currency for accurate calculations.</p></details>
+        <details><summary>Can I compare different student loan repayment strategies?</summary><p>Yes. Change the term length or add extra payments to compare different strategies. For example, compare a 10-year standard plan versus an aggressive 5-year payoff. freeloancalc.app updates instantly as you adjust inputs.</p></details>
+    </article>
+    <footer class="landing-footer">&copy; freeloancalc.app</footer>
+    <a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener"><span class="badge-prefix">by </span>freesuite.app</a>
+    <script>(() => { const t=document.getElementById('themeToggle'); const g=()=>localStorage.getItem('suite_theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); const a=(v)=>{document.documentElement.classList.toggle('dark',v==='dark');t.textContent=v==='dark'?'🌙':'☀️';localStorage.setItem('suite_theme',v);}; a(g()); t.addEventListener('click',()=>a(document.documentElement.classList.contains('dark')?'light':'dark')); })();</script>
+</body>
+</html>

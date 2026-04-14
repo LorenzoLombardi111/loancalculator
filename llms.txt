@@ -1,0 +1,35 @@
+# freeloancalc.app
+
+> Free online loan calculator with amortization schedule, interest breakdown, extra payment analysis, and 15 international currencies. No signup, no ads, no data collection.
+
+## Key Facts
+- 100% browser-based — no server, no database, no data transmission
+- Supports USD, EUR, GBP, CHF, CAD, AUD, JPY, INR, BRL, MXN, SEK, NOK, DKK, PLN, THB
+- Real-time calculation as you type — no "Calculate" button needed
+- Full month-by-month amortization schedule with CSV export
+- Extra monthly payment modeling with savings display
+- Loan presets: 30yr mortgage, 15yr mortgage, 5yr auto, 3yr personal, 10yr student
+- Progressive Web App — works offline
+- Dark mode support
+- Part of the Freesuite collection at freesuite.app
+
+## Features
+- Monthly payment calculation using standard amortization formula
+- Total interest and total paid over the life of the loan
+- Payoff date projection
+- Donut chart showing principal vs interest breakdown
+- Amortization schedule with payment, principal, interest, and remaining balance columns
+- Extra payment analysis: interest saved and months shaved off
+- Currency selector with locale-appropriate number formatting
+- CSV export of full amortization schedule
+- Responsive design for desktop, tablet, and mobile
+
+## Pages
+- [Home](https://freeloancalc.app/) — Main loan calculator tool
+- [vs Bankrate](https://freeloancalc.app/vs-bankrate) — Comparison with Bankrate's calculator
+- [vs NerdWallet](https://freeloancalc.app/vs-nerdwallet) — Comparison with NerdWallet's calculator
+- [Mortgage Calculator](https://freeloancalc.app/mortgage-calculator) — Mortgage-specific guide and calculator
+- [Auto Loan Calculator](https://freeloancalc.app/auto-loan-calculator) — Car loan payment calculator
+- [Student Loan Calculator](https://freeloancalc.app/student-loan-calculator) — Student loan repayment calculator
+
+For the complete text content of all pages, see [llms-full.txt](https://freeloancalc.app/llms-full.txt).

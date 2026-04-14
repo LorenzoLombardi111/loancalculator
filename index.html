@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Loan Calculator Online — freeloancalc.app</title>
+    <meta name="description" content="Calculate loan payments, total interest, and amortization schedules for free. No signup required.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://freeloancalc.app/">
+    <meta name="theme-color" content="#faf9f6">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Loan Calculator Online — freeloancalc.app">
+    <meta property="og:description" content="Calculate loan payments, total interest, and amortization schedules for free. No signup required.">
+    <meta property="og:image" content="https://freeloancalc.app/og-image.svg">
+    <meta property="og:url" content="https://freeloancalc.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Loan Calculator Online — freeloancalc.app">
+    <meta name="twitter:description" content="Calculate loan payments, total interest, and amortization schedules for free. No signup required.">
+    <meta name="twitter:image" content="https://freeloancalc.app/og-image.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "freeloancalc.app",
+        "description": "Calculate loan payments, total interest, and amortization schedules for free. No signup required.",
+        "url": "https://freeloancalc.app/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How is my monthly loan payment calculated?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Your monthly payment is calculated using the standard amortization formula: M = P[r(1+r)^n]/[(1+r)^n-1], where P is the loan amount, r is the monthly interest rate, and n is the total number of payments. freeloancalc.app computes this instantly when you enter your loan details." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is an amortization schedule?",
+                "acceptedAnswer": { "@type": "Answer", "text": "An amortization schedule is a table showing each monthly payment broken down into principal and interest portions over the life of the loan. Early payments are mostly interest, while later payments go mostly toward principal. freeloancalc.app generates a complete amortization schedule for any loan." }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the interest rate affect my total payment?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Even small changes in interest rate significantly affect total cost. For example, on a $300,000 30-year mortgage, a 1% rate increase adds roughly $60,000 in total interest. Use freeloancalc.app to compare different rates and see the exact impact." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I calculate extra payments to pay off my loan faster?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. freeloancalc.app includes an extra payment field that shows how additional monthly payments reduce your total interest and shorten your loan term. Even small extra payments can save thousands over the life of the loan." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my financial data safe with freeloancalc.app?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. freeloancalc.app processes everything locally in your browser using JavaScript. No financial data is sent to any server, stored in any database, or shared with anyone. Your numbers never leave your device." }
+            },
+            {
+                "@type": "Question",
+                "name": "What types of loans can I calculate with freeloancalc.app?",
+                "acceptedAnswer": { "@type": "Answer", "text": "freeloancalc.app works for any fixed-rate loan: mortgages, auto loans, personal loans, student loans, and business loans. Enter the amount, rate, and term to get instant results for any loan type." }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freeloancalc.app/"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* ===== CSS Reset ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== CSS Variables — Light Mode ===== */
+        :root {
+            --bg: #faf9f6;
+            --surface: #f4f2ee;
+            --border: #e8e4dd;
+            --text-primary: #1a1917;
+            --text-secondary: #6b6760;
+            --text-muted: #9e9b96;
+            --accent: #C49A2A;
+            --accent-hover: #A8831F;
+            --accent-text: #ffffff;
+            --destructive: #c0392b;
+            --success: #27ae60;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+            --font-body: 'Lora', serif;
+            --font-ui: 'DM Sans', sans-serif;
+        }
+
+        /* ===== Dark Mode ===== */
+        html.dark {
+            --bg: #141412;
+            --surface: #1e1c1a;
+            --border: #2e2b27;
+            --text-primary: #f0ede8;
+            --text-secondary: #9e9b96;
+            --text-muted: #6b6760;
+            --accent: #D4A835;
+            --accent-hover: #C49A2A;
+            --accent-text: #ffffff;
+            --success: #2ecc71;
+            --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        /* ===== Base ===== */
+        html { font-size: 15px; line-height: 1.6; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+        }
+
+        /* ===== App Wrapper ===== */
+        .app-wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ===== Header ===== */
+        .header {
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            flex-shrink: 0;
+        }
+        .header-brand {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ===== Theme Toggle ===== */
+        .theme-toggle {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 6px 12px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .theme-toggle:hover { background: var(--border); }
+
+        /* ===== Buttons ===== */
+        .btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .btn-primary { background: var(--accent); color: var(--accent-text); }
+        .btn-primary:hover:not(:disabled) { background: var(--accent-hover); }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .btn-secondary:hover:not(:disabled) { background: var(--surface); }
+
+        /* ===== Calculator Layout ===== */
+        .calc-layout {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .calc-sidebar {
+            width: 340px;
+            flex-shrink: 0;
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+            padding: 24px;
+            background: var(--bg);
+        }
+
+        .calc-results {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        /* ===== Form Groups ===== */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block;
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .input-prefix, .input-suffix {
+            position: absolute;
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .input-prefix { left: 12px; }
+        .input-suffix { right: 12px; }
+        .input {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            transition: all 0.15s ease;
+            width: 100%;
+        }
+        .input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(196,154,42,0.12);
+        }
+        .input-has-prefix { padding-left: 24px; }
+        .input-has-suffix { padding-right: 32px; }
+
+        /* Hide number input spinners */
+        .input[type="number"]::-webkit-outer-spin-button,
+        .input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .input[type="number"] { -moz-appearance: textfield; }
+
+        /* ===== Term Row ===== */
+        .term-row {
+            display: flex;
+            gap: 8px;
+        }
+        .term-row .input-wrap { flex: 1; }
+
+        /* ===== Toggle Buttons ===== */
+        .toggle-group { display: flex; gap: 4px; }
+        .toggle-btn {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: var(--surface);
+            color: var(--text-secondary);
+            transition: all 0.15s ease;
+        }
+        .toggle-btn.active {
+            background: var(--accent);
+            color: var(--accent-text);
+        }
+
+        /* ===== Presets ===== */
+        .presets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .preset-btn {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+
+        /* ===== Currency Selector ===== */
+        .currency-select {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' fill='none' stroke='%236b6760' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+        .currency-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(196,154,42,0.12);
+        }
+
+        /* ===== Stat Cards ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+        }
+        .stat-card .stat-value {
+            font-family: var(--font-ui);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        .stat-card .stat-label {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 4px;
+        }
+        .stat-card.highlight .stat-value { color: var(--accent); }
+
+        /* ===== Savings Banner ===== */
+        .savings-banner {
+            background: var(--surface);
+            border: 1px solid var(--success);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--success);
+            display: none;
+        }
+        .savings-banner.visible { display: block; }
+
+        /* ===== Chart Area ===== */
+        .chart-area {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+        .chart-canvas-wrap {
+            flex-shrink: 0;
+        }
+        #donutChart {
+            display: block;
+        }
+        .chart-legend {
+            flex: 1;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .legend-label {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .legend-value {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 2px;
+        }
+
+        /* ===== Amortization Table ===== */
+        .schedule-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .schedule-title {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .table-wrap {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .table-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .amort-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-ui);
+            font-size: 12px;
+        }
+        .amort-table thead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .amort-table th {
+            background: var(--surface);
+            padding: 10px 12px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
+        }
+        .amort-table th:first-child { text-align: left; }
+        .amort-table td {
+            padding: 8px 12px;
+            text-align: right;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+        .amort-table td:first-child {
+            text-align: left;
+            color: var(--text-muted);
+        }
+        .amort-table tbody tr:hover td {
+            background: var(--surface);
+        }
+        .amort-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== Upgrade Prompt ===== */
+        .upgrade-prompt {
+            border-top: 1px solid var(--border);
+            padding: 16px 0 0;
+            margin-top: 24px;
+        }
+        .upgrade-prompt .upgrade-title {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .upgrade-prompt .upgrade-desc {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .upgrade-prompt .upgrade-link {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            margin-top: 4px;
+            display: inline-block;
+        }
+
+        /* ===== Status Bar ===== */
+        .status-bar {
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .status-bar span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* ===== Freesuite Badge ===== */
+        .suite-badge {
+            position: fixed;
+            bottom: 40px;
+            right: 16px;
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        /* ===== Toast ===== */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--text-primary);
+            color: var(--bg);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.15s ease;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* ===== Scrollbar ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        /* ===== SEO Content ===== */
+        .seo-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px;
+            font-family: var(--font-body);
+            color: var(--text-primary);
+        }
+        .seo-content h1 {
+            font-family: var(--font-body);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .seo-content h2 {
+            font-family: var(--font-body);
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        .seo-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .seo-content details {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 8px;
+        }
+        .seo-content summary {
+            font-family: var(--font-ui);
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+        .seo-content details p {
+            margin-top: 12px;
+            margin-bottom: 0;
+        }
+        .seo-footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .more-tools {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .more-tools-label {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        .more-tools-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .more-tools-links a {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 4px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        .more-tools-links a:hover { background: var(--surface); }
+
+        /* ===== Mobile ===== */
+        @media (max-width: 768px) {
+            .calc-layout {
+                flex-direction: column;
+                overflow-y: auto;
+            }
+            .calc-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 16px;
+                overflow-y: visible;
+            }
+            .calc-results {
+                padding: 16px;
+                overflow-y: visible;
+            }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .stat-card .stat-value { font-size: 18px; }
+            .chart-area { flex-direction: column; gap: 16px; }
+            .suite-badge .badge-prefix { display: none; }
+            .schedule-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .presets { gap: 4px; }
+            .preset-btn { font-size: 10px; padding: 4px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <a href="/" class="header-brand">freeloancalc.app</a>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="exportBtn" title="Export amortization as CSV">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    CSV
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="toggle-icon">☀️</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Calculator Layout -->
+        <div class="calc-layout">
+            <!-- Sidebar: Inputs -->
+            <aside class="calc-sidebar">
+                <!-- Presets -->
+                <div class="form-group">
+                    <label class="form-label">Quick Presets</label>
+                    <div class="presets" id="presets">
+                        <button class="preset-btn active" data-amount="300000" data-rate="6.5" data-term="30" data-mode="years">Mortgage 30yr</button>
+                        <button class="preset-btn" data-amount="300000" data-rate="6.0" data-term="15" data-mode="years">Mortgage 15yr</button>
+                        <button class="preset-btn" data-amount="35000" data-rate="7.0" data-term="5" data-mode="years">Auto 5yr</button>
+                        <button class="preset-btn" data-amount="15000" data-rate="10.0" data-term="3" data-mode="years">Personal 3yr</button>
+                        <button class="preset-btn" data-amount="40000" data-rate="5.5" data-term="10" data-mode="years">Student 10yr</button>
+                    </div>
+                </div>
+
+                <!-- Currency -->
+                <div class="form-group">
+                    <label class="form-label" for="currency">Currency</label>
+                    <select class="currency-select" id="currency">
+                        <option value="USD" data-symbol="$" data-locale="en-US">$ USD — US Dollar</option>
+                        <option value="EUR" data-symbol="€" data-locale="de-DE">€ EUR — Euro</option>
+                        <option value="GBP" data-symbol="£" data-locale="en-GB">£ GBP — British Pound</option>
+                        <option value="CHF" data-symbol="CHF" data-locale="de-CH">CHF — Swiss Franc</option>
+                        <option value="CAD" data-symbol="$" data-locale="en-CA">$ CAD — Canadian Dollar</option>
+                        <option value="AUD" data-symbol="$" data-locale="en-AU">$ AUD — Australian Dollar</option>
+                        <option value="JPY" data-symbol="¥" data-locale="ja-JP">¥ JPY — Japanese Yen</option>
+                        <option value="INR" data-symbol="₹" data-locale="en-IN">₹ INR — Indian Rupee</option>
+                        <option value="BRL" data-symbol="R$" data-locale="pt-BR">R$ BRL — Brazilian Real</option>
+                        <option value="MXN" data-symbol="$" data-locale="es-MX">$ MXN — Mexican Peso</option>
+                        <option value="SEK" data-symbol="kr" data-locale="sv-SE">kr SEK — Swedish Krona</option>
+                        <option value="NOK" data-symbol="kr" data-locale="nb-NO">kr NOK — Norwegian Krone</option>
+                        <option value="DKK" data-symbol="kr" data-locale="da-DK">kr DKK — Danish Krone</option>
+                        <option value="PLN" data-symbol="zł" data-locale="pl-PL">zł PLN — Polish Zloty</option>
+                        <option value="THB" data-symbol="฿" data-locale="th-TH">฿ THB — Thai Baht</option>
+                    </select>
+                </div>
+
+                <!-- Loan Amount -->
+                <div class="form-group">
+                    <label class="form-label" for="loanAmount">Loan Amount</label>
+                    <div class="input-wrap">
+                        <span class="input-prefix" id="currencyPrefix">$</span>
+                        <input type="number" class="input input-has-prefix" id="loanAmount" value="300000" min="0" step="1000">
+                    </div>
+                </div>
+
+                <!-- Interest Rate -->
+                <div class="form-group">
+                    <label class="form-label" for="interestRate">Annual Interest Rate</label>
+                    <div class="input-wrap">
+                        <input type="number" class="input input-has-suffix" id="interestRate" value="6.5" min="0" max="100" step="0.125">
+                        <span class="input-suffix">%</span>
+                    </div>
+                </div>
+
+                <!-- Loan Term -->
+                <div class="form-group">
+                    <label class="form-label">Loan Term</label>
+                    <div class="term-row">
+                        <div class="input-wrap">
+                            <input type="number" class="input" id="loanTerm" value="30" min="1">
+                        </div>
+                        <div class="toggle-group" id="termToggle">
+                            <button class="toggle-btn active" data-mode="years">Years</button>
+                            <button class="toggle-btn" data-mode="months">Months</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extra Payment -->
+                <div class="form-group">
+                    <label class="form-label" for="extraPayment">Extra Monthly Payment</label>
+                    <div class="input-wrap">
+                        <span class="input-prefix" id="extraPrefix">$</span>
+                        <input type="number" class="input input-has-prefix" id="extraPayment" value="0" min="0" step="50">
+                    </div>
+                </div>
+
+                <!-- Pro Feature -->
+                <div class="upgrade-prompt" id="upgrade-prompt">
+                    <div class="upgrade-title">&#128274; Loan Comparison</div>
+                    <div class="upgrade-desc">Compare up to 3 loans side by side with visual overlays.</div>
+                    <a href="https://freesuite.app" class="upgrade-link">Unlock with freesuite.app · $2.88/mo</a>
+                </div>
+            </aside>
+
+            <!-- Results -->
+            <div class="calc-results" id="results">
+                <!-- Stat Cards -->
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-card highlight">
+                        <div class="stat-value" id="statPayment">$1,896.20</div>
+                        <div class="stat-label">Monthly Payment</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statInterest">$382,633.76</div>
+                        <div class="stat-label">Total Interest</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statTotal">$682,633.76</div>
+                        <div class="stat-label">Total Paid</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statPayoff">Apr 2056</div>
+                        <div class="stat-label">Payoff Date</div>
+                    </div>
+                </div>
+
+                <!-- Savings Banner -->
+                <div class="savings-banner" id="savingsBanner"></div>
+
+                <!-- Donut Chart -->
+                <div class="chart-area">
+                    <div class="chart-canvas-wrap">
+                        <canvas id="donutChart" width="180" height="180"></canvas>
+                    </div>
+                    <div class="chart-legend" id="chartLegend">
+                        <div class="legend-item">
+                            <div class="legend-dot" id="legendDotPrincipal"></div>
+                            <div>
+                                <div class="legend-label">Principal</div>
+                                <div class="legend-value" id="legendPrincipal">$300,000.00</div>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" id="legendDotInterest"></div>
+                            <div>
+                                <div class="legend-label">Total Interest</div>
+                                <div class="legend-value" id="legendInterest">$382,633.76</div>
+                            </div>
+                        </div>
+                        <div class="legend-item" id="legendExtraRow" style="display:none">
+                            <div class="legend-dot" style="background:var(--success)"></div>
+                            <div>
+                                <div class="legend-label">Interest Saved</div>
+                                <div class="legend-value" id="legendSaved">$0.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amortization Schedule -->
+                <div class="schedule-header">
+                    <div class="schedule-title">Amortization Schedule</div>
+                </div>
+                <div class="table-wrap">
+                    <div class="table-scroll">
+                        <table class="amort-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Payment</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <footer class="status-bar">
+            <span id="statusLeft">Ready</span>
+            <span>All processing happens in your browser — nothing uploaded</span>
+        </footer>
+    </div>
+
+    <!-- Freesuite Badge -->
+    <a href="https://freesuite.app" class="suite-badge" target="_blank" rel="noopener">
+        <span class="badge-prefix">by </span>freesuite.app
+    </a>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- SEO Content -->
+    <div class="seo-content">
+        <h1>Free Loan Calculator — Calculate Payments and Amortization Instantly</h1>
+
+        <p>freeloancalc.app is a free online loan calculator that computes your monthly payment, total interest, and full amortization schedule in real time. Enter your loan amount, annual interest rate, and term to see exactly how much you will pay each month and over the life of the loan. freeloancalc.app supports mortgages, auto loans, personal loans, student loans, and any other fixed-rate loan. All calculations happen instantly in your browser with no signup, no ads, and no data ever leaving your device. You can also model extra monthly payments to see how much interest you save and how many months earlier you pay off the loan. freeloancalc.app works with 15 currencies for users worldwide.</p>
+
+        <h2>How do I calculate my loan payment with freeloancalc.app?</h2>
+        <p>Enter your loan amount, annual interest rate, and loan term in years or months. freeloancalc.app instantly calculates your monthly payment using the standard amortization formula and displays the full payment breakdown. You can also add extra monthly payments to see how they reduce your total interest and shorten your loan term. Switch between 15 currencies to match your local format.</p>
+
+        <h2>Is freeloancalc.app free to use?</h2>
+        <p>freeloancalc.app is completely free with no sign-up required. All processing happens in your browser — your financial data never leaves your device. No ads, no tracking, no cookies.</p>
+
+        <h2>What makes freeloancalc.app different from other loan calculators?</h2>
+        <p>Unlike Bankrate or NerdWallet calculators, freeloancalc.app is a standalone tool with no ads, no affiliate offers, and no data collection. Your numbers stay on your device. The interface updates in real time as you type, includes a full amortization schedule with CSV export, supports extra payment modeling, and works in 15 international currencies. It also works offline as a PWA.</p>
+
+        <h2>Can I use freeloancalc.app on my phone?</h2>
+        <p>freeloancalc.app works on any device with a modern browser — desktop, tablet, or mobile. The interface adapts to your screen size automatically. You can also install it as an app on your home screen for offline access.</p>
+
+        <h2>Is my data safe with freeloancalc.app?</h2>
+        <p>Yes. freeloancalc.app processes everything locally in your browser using JavaScript. No financial data is sent to any server, stored in any database, or shared with anyone. Your numbers never leave your device.</p>
+
+        <!-- FAQ Section -->
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+            <summary>How is my monthly loan payment calculated?</summary>
+            <p>Your monthly payment is calculated using the standard amortization formula: M = P[r(1+r)^n]/[(1+r)^n-1], where P is the loan amount, r is the monthly interest rate, and n is the total number of payments. freeloancalc.app computes this instantly when you enter your loan details.</p>
+        </details>
+
+        <details>
+            <summary>What is an amortization schedule?</summary>
+            <p>An amortization schedule is a table showing each monthly payment broken down into principal and interest portions over the life of the loan. Early payments are mostly interest, while later payments go mostly toward principal. freeloancalc.app generates a complete amortization schedule for any loan.</p>
+        </details>
+
+        <details>
+            <summary>How does the interest rate affect my total payment?</summary>
+            <p>Even small changes in interest rate significantly affect total cost. For example, on a $300,000 30-year mortgage, a 1% rate increase adds roughly $60,000 in total interest. Use freeloancalc.app to compare different rates and see the exact impact.</p>
+        </details>
+
+        <details>
+            <summary>Can I calculate extra payments to pay off my loan faster?</summary>
+            <p>Yes. freeloancalc.app includes an extra payment field that shows how additional monthly payments reduce your total interest and shorten your loan term. Even small extra payments can save thousands over the life of the loan.</p>
+        </details>
+
+        <details>
+            <summary>Is my financial data safe with freeloancalc.app?</summary>
+            <p>Absolutely. freeloancalc.app processes everything locally in your browser using JavaScript. No financial data is sent to any server, stored in any database, or shared with anyone. Your numbers never leave your device.</p>
+        </details>
+
+        <details>
+            <summary>What types of loans can I calculate with freeloancalc.app?</summary>
+            <p>freeloancalc.app works for any fixed-rate loan: mortgages, auto loans, personal loans, student loans, and business loans. Enter the amount, rate, and term to get instant results for any loan type.</p>
+        </details>
+    </div>
+
+    <footer class="seo-footer">
+        &copy; freeloancalc.app
+        <div class="more-tools">
+            <div class="more-tools-label">More free tools from Freesuite</div>
+            <div class="more-tools-links">
+                <a href="https://freeunitconvert.app">Unit Converter</a>
+                <a href="https://freesheets.app">Spreadsheets</a>
+                <a href="https://freepasswordgenerator.app">Password Generator</a>
+                <a href="https://freeqrcodegen.app">QR Code Generator</a>
+                <a href="https://freehabittracker.app">Habit Tracker</a>
+                <a href="https://freewordcounter.app">Word Counter</a>
+                <a href="https://freejsonformatter.app">JSON Formatter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    /* ===== Dark Mode ===== */
+    (() => {
+        const toggle = document.getElementById('themeToggle');
+        const icon = toggle.querySelector('.toggle-icon');
+        const getTheme = () => {
+            const stored = localStorage.getItem('suite_theme');
+            if (stored) return stored;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+        const applyTheme = (theme) => {
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+            localStorage.setItem('suite_theme', theme);
+        };
+        applyTheme(getTheme());
+        toggle.addEventListener('click', () => {
+            const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+            drawChart();
+        });
+    })();
+
+    /* ===== Toast ===== */
+    const showToast = (message) => {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    };
+
+    /* ===== Service Worker ===== */
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+
+    /* ===== Currency Formatting ===== */
+    const CURRENCIES = {
+        USD: { symbol: '$', locale: 'en-US', decimals: 2 },
+        EUR: { symbol: '€', locale: 'de-DE', decimals: 2 },
+        GBP: { symbol: '£', locale: 'en-GB', decimals: 2 },
+        CHF: { symbol: 'CHF', locale: 'de-CH', decimals: 2 },
+        CAD: { symbol: '$', locale: 'en-CA', decimals: 2 },
+        AUD: { symbol: '$', locale: 'en-AU', decimals: 2 },
+        JPY: { symbol: '¥', locale: 'ja-JP', decimals: 0 },
+        INR: { symbol: '₹', locale: 'en-IN', decimals: 2 },
+        BRL: { symbol: 'R$', locale: 'pt-BR', decimals: 2 },
+        MXN: { symbol: '$', locale: 'es-MX', decimals: 2 },
+        SEK: { symbol: 'kr', locale: 'sv-SE', decimals: 2 },
+        NOK: { symbol: 'kr', locale: 'nb-NO', decimals: 2 },
+        DKK: { symbol: 'kr', locale: 'da-DK', decimals: 2 },
+        PLN: { symbol: 'zł', locale: 'pl-PL', decimals: 2 },
+        THB: { symbol: '฿', locale: 'th-TH', decimals: 2 }
+    };
+
+    let currentCurrency = 'USD';
+
+    const formatCurrency = (amount) => {
+        const c = CURRENCIES[currentCurrency];
+        return new Intl.NumberFormat(c.locale, {
+            style: 'currency',
+            currency: currentCurrency,
+            minimumFractionDigits: c.decimals,
+            maximumFractionDigits: c.decimals
+        }).format(amount);
+    };
+
+    const formatDate = (date) => {
+        return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short' }).format(date);
+    };
+
+    /* ===== DOM Refs ===== */
+    const elAmount = document.getElementById('loanAmount');
+    const elRate = document.getElementById('interestRate');
+    const elTerm = document.getElementById('loanTerm');
+    const elExtra = document.getElementById('extraPayment');
+    const elCurrency = document.getElementById('currency');
+    const elStatPayment = document.getElementById('statPayment');
+    const elStatInterest = document.getElementById('statInterest');
+    const elStatTotal = document.getElementById('statTotal');
+    const elStatPayoff = document.getElementById('statPayoff');
+    const elSavings = document.getElementById('savingsBanner');
+    const elSchedule = document.getElementById('scheduleBody');
+    const elStatus = document.getElementById('statusLeft');
+    const elLegendPrincipal = document.getElementById('legendPrincipal');
+    const elLegendInterest = document.getElementById('legendInterest');
+    const elLegendSaved = document.getElementById('legendSaved');
+    const elLegendExtraRow = document.getElementById('legendExtraRow');
+
+    let termMode = 'years';
+    let schedule = [];
+
+    /* ===== Calculation ===== */
+    const calculate = () => {
+        const P = parseFloat(elAmount.value) || 0;
+        const annualRate = parseFloat(elRate.value) || 0;
+        const termVal = parseInt(elTerm.value) || 0;
+        const extra = parseFloat(elExtra.value) || 0;
+
+        if (P <= 0 || annualRate <= 0 || termVal <= 0) {
+            elStatPayment.textContent = formatCurrency(0);
+            elStatInterest.textContent = formatCurrency(0);
+            elStatTotal.textContent = formatCurrency(0);
+            elStatPayoff.textContent = '—';
+            elSavings.classList.remove('visible');
+            elSchedule.innerHTML = '';
+            elStatus.textContent = 'Enter loan details';
+            drawChart();
+            return;
+        }
+
+        const n = termMode === 'years' ? termVal * 12 : termVal;
+        const r = annualRate / 100 / 12;
+
+        /* Standard monthly payment */
+        const monthlyPayment = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+        /* Generate amortization — without extra */
+        let balanceStd = P;
+        let totalInterestStd = 0;
+        for (let i = 0; i < n; i++) {
+            const intPortion = balanceStd * r;
+            totalInterestStd += intPortion;
+            balanceStd -= (monthlyPayment - intPortion);
+        }
+
+        /* Generate amortization — with extra */
+        schedule = [];
+        let balance = P;
+        let totalInterest = 0;
+        let totalPaid = 0;
+        const startDate = new Date();
+        startDate.setDate(1);
+        startDate.setMonth(startDate.getMonth() + 1);
+
+        for (let i = 1; balance > 0.005; i++) {
+            const intPortion = balance * r;
+            let prinPortion = monthlyPayment - intPortion;
+            let extraThisMonth = Math.min(extra, balance - prinPortion);
+            if (extraThisMonth < 0) extraThisMonth = 0;
+
+            let totalPayment = monthlyPayment + extraThisMonth;
+
+            if (balance < totalPayment) {
+                totalPayment = balance + intPortion;
+                prinPortion = balance;
+                extraThisMonth = 0;
+            }
+
+            balance -= (prinPortion + extraThisMonth);
+            if (balance < 0.005) balance = 0;
+
+            totalInterest += intPortion;
+            totalPaid += totalPayment;
+
+            const payDate = new Date(startDate);
+            payDate.setMonth(payDate.getMonth() + (i - 1));
+
+            schedule.push({
+                month: i,
+                date: payDate,
+                payment: totalPayment,
+                principal: prinPortion + extraThisMonth,
+                interest: intPortion,
+                balance: balance
+            });
+
+            if (i > 1200) break;
+        }
+
+        const payoffDate = schedule.length > 0 ? schedule[schedule.length - 1].date : new Date();
+        const interestSaved = extra > 0 ? totalInterestStd - totalInterest : 0;
+        const monthsSaved = extra > 0 ? n - schedule.length : 0;
+
+        /* Update UI */
+        elStatPayment.textContent = formatCurrency(monthlyPayment + extra);
+        elStatInterest.textContent = formatCurrency(totalInterest);
+        elStatTotal.textContent = formatCurrency(totalPaid);
+        elStatPayoff.textContent = formatDate(payoffDate);
+
+        elLegendPrincipal.textContent = formatCurrency(P);
+        elLegendInterest.textContent = formatCurrency(totalInterest);
+
+        if (extra > 0 && interestSaved > 0) {
+            const yrs = Math.floor(monthsSaved / 12);
+            const mos = monthsSaved % 12;
+            let timeStr = '';
+            if (yrs > 0) timeStr += yrs + (yrs === 1 ? ' year' : ' years');
+            if (mos > 0) timeStr += (yrs > 0 ? ' ' : '') + mos + (mos === 1 ? ' month' : ' months');
+            elSavings.textContent = 'With extra payments: save ' + formatCurrency(interestSaved) + ' in interest, pay off ' + timeStr + ' early';
+            elSavings.classList.add('visible');
+            elLegendExtraRow.style.display = 'flex';
+            elLegendSaved.textContent = formatCurrency(interestSaved);
+        } else {
+            elSavings.classList.remove('visible');
+            elLegendExtraRow.style.display = 'none';
+        }
+
+        elStatus.textContent = 'Monthly payment: ' + formatCurrency(monthlyPayment + extra) + ' · Total interest: ' + formatCurrency(totalInterest);
+
+        renderSchedule();
+        drawChart();
+
+        /* Save to localStorage */
+        localStorage.setItem('freeloancalc_currency', currentCurrency);
+        localStorage.setItem('freeloancalc_amount', elAmount.value);
+        localStorage.setItem('freeloancalc_rate', elRate.value);
+        localStorage.setItem('freeloancalc_term', elTerm.value);
+        localStorage.setItem('freeloancalc_termmode', termMode);
+        localStorage.setItem('freeloancalc_extra', elExtra.value);
+    };
+
+    /* ===== Render Schedule ===== */
+    const renderSchedule = () => {
+        const fragment = document.createDocumentFragment();
+        for (const row of schedule) {
+            const tr = document.createElement('tr');
+            tr.innerHTML =
+                '<td>' + row.month + '</td>' +
+                '<td>' + formatDate(row.date) + '</td>' +
+                '<td>' + formatCurrency(row.payment) + '</td>' +
+                '<td>' + formatCurrency(row.principal) + '</td>' +
+                '<td>' + formatCurrency(row.interest) + '</td>' +
+                '<td>' + formatCurrency(row.balance) + '</td>';
+            fragment.appendChild(tr);
+        }
+        elSchedule.innerHTML = '';
+        elSchedule.appendChild(fragment);
+    };
+
+    /* ===== Draw Donut Chart ===== */
+    const drawChart = () => {
+        const canvas = document.getElementById('donutChart');
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const size = 180;
+        canvas.width = size * dpr;
+        canvas.height = size * dpr;
+        canvas.style.width = size + 'px';
+        canvas.style.height = size + 'px';
+        ctx.scale(dpr, dpr);
+
+        const styles = getComputedStyle(document.documentElement);
+        const accentColor = styles.getPropertyValue('--accent').trim();
+        const borderColor = styles.getPropertyValue('--border').trim();
+        const mutedColor = styles.getPropertyValue('--text-muted').trim();
+        const primaryColor = styles.getPropertyValue('--text-primary').trim();
+
+        document.getElementById('legendDotPrincipal').style.background = accentColor;
+        document.getElementById('legendDotInterest').style.background = borderColor;
+
+        const P = parseFloat(elAmount.value) || 0;
+        const totalInterest = schedule.reduce((s, r) => s + r.interest, 0);
+        const total = P + totalInterest;
+
+        ctx.clearRect(0, 0, size, size);
+
+        if (total <= 0) {
+            ctx.beginPath();
+            ctx.arc(90, 90, 70, 0, Math.PI * 2);
+            ctx.strokeStyle = borderColor;
+            ctx.lineWidth = 24;
+            ctx.stroke();
+            return;
+        }
+
+        const cx = 90, cy = 90, outerR = 70, innerR = 48;
+        const principalAngle = (P / total) * Math.PI * 2;
+        const gap = 0.03;
+
+        /* Principal arc */
+        ctx.beginPath();
+        ctx.arc(cx, cy, outerR, -Math.PI / 2 + gap, -Math.PI / 2 + principalAngle - gap);
+        ctx.arc(cx, cy, innerR, -Math.PI / 2 + principalAngle - gap, -Math.PI / 2 + gap, true);
+        ctx.closePath();
+        ctx.fillStyle = accentColor;
+        ctx.fill();
+
+        /* Interest arc */
+        ctx.beginPath();
+        ctx.arc(cx, cy, outerR, -Math.PI / 2 + principalAngle + gap, -Math.PI / 2 + Math.PI * 2 - gap);
+        ctx.arc(cx, cy, innerR, -Math.PI / 2 + Math.PI * 2 - gap, -Math.PI / 2 + principalAngle + gap, true);
+        ctx.closePath();
+        ctx.fillStyle = borderColor;
+        ctx.fill();
+
+        /* Center percentage */
+        const pct = Math.round((P / total) * 100);
+        ctx.fillStyle = primaryColor;
+        ctx.font = '700 22px DM Sans, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(pct + '%', cx, cy - 6);
+        ctx.fillStyle = mutedColor;
+        ctx.font = '400 10px DM Sans, sans-serif';
+        ctx.fillText('principal', cx, cy + 12);
+    };
+
+    /* ===== Event Listeners ===== */
+    [elAmount, elRate, elTerm, elExtra].forEach(el => {
+        el.addEventListener('input', () => {
+            clearActivePreset();
+            calculate();
+        });
+    });
+
+    /* Currency change */
+    elCurrency.addEventListener('change', () => {
+        currentCurrency = elCurrency.value;
+        const c = CURRENCIES[currentCurrency];
+        document.getElementById('currencyPrefix').textContent = c.symbol;
+        document.getElementById('extraPrefix').textContent = c.symbol;
+        calculate();
+    });
+
+    /* Term mode toggle */
+    document.getElementById('termToggle').addEventListener('click', (e) => {
+        const btn = e.target.closest('.toggle-btn');
+        if (!btn) return;
+        termMode = btn.dataset.mode;
+        document.querySelectorAll('#termToggle .toggle-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        calculate();
+    });
+
+    /* Presets */
+    const clearActivePreset = () => {
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    };
+
+    document.getElementById('presets').addEventListener('click', (e) => {
+        const btn = e.target.closest('.preset-btn');
+        if (!btn) return;
+        clearActivePreset();
+        btn.classList.add('active');
+
+        elAmount.value = btn.dataset.amount;
+        elRate.value = btn.dataset.rate;
+        elTerm.value = btn.dataset.term;
+        termMode = btn.dataset.mode;
+        document.querySelectorAll('#termToggle .toggle-btn').forEach(b => {
+            b.classList.toggle('active', b.dataset.mode === termMode);
+        });
+        calculate();
+    });
+
+    /* Export CSV */
+    document.getElementById('exportBtn').addEventListener('click', () => {
+        if (schedule.length === 0) {
+            showToast('Nothing to export — enter loan details first');
+            return;
+        }
+        const c = CURRENCIES[currentCurrency];
+        let csv = 'Month,Date,Payment,Principal,Interest,Balance\n';
+        for (const row of schedule) {
+            csv += row.month + ',' +
+                formatDate(row.date) + ',' +
+                row.payment.toFixed(c.decimals) + ',' +
+                row.principal.toFixed(c.decimals) + ',' +
+                row.interest.toFixed(c.decimals) + ',' +
+                row.balance.toFixed(c.decimals) + '\n';
+        }
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'amortization-schedule.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Amortization schedule exported');
+    });
+
+    /* ===== Restore from localStorage ===== */
+    (() => {
+        const savedCurrency = localStorage.getItem('freeloancalc_currency');
+        if (savedCurrency && CURRENCIES[savedCurrency]) {
+            currentCurrency = savedCurrency;
+            elCurrency.value = savedCurrency;
+            const c = CURRENCIES[savedCurrency];
+            document.getElementById('currencyPrefix').textContent = c.symbol;
+            document.getElementById('extraPrefix').textContent = c.symbol;
+        }
+        const savedAmount = localStorage.getItem('freeloancalc_amount');
+        if (savedAmount) elAmount.value = savedAmount;
+        const savedRate = localStorage.getItem('freeloancalc_rate');
+        if (savedRate) elRate.value = savedRate;
+        const savedTerm = localStorage.getItem('freeloancalc_term');
+        if (savedTerm) elTerm.value = savedTerm;
+        const savedMode = localStorage.getItem('freeloancalc_termmode');
+        if (savedMode) {
+            termMode = savedMode;
+            document.querySelectorAll('#termToggle .toggle-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.mode === termMode);
+            });
+        }
+        const savedExtra = localStorage.getItem('freeloancalc_extra');
+        if (savedExtra) elExtra.value = savedExtra;
+    })();
+
+    /* ===== Initial Calculation ===== */
+    calculate();
+
+    </script>
+</body>
+</html>

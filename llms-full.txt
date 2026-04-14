@@ -1,0 +1,162 @@
+# freeloancalc.app — Complete Content
+
+> Free online loan calculator with amortization schedule, interest breakdown, extra payment analysis, and 15 international currencies. No signup, no ads, no data collection.
+
+---
+
+## Home Page
+
+### Free Loan Calculator — Calculate Payments and Amortization Instantly
+
+freeloancalc.app is a free online loan calculator that computes your monthly payment, total interest, and full amortization schedule in real time. Enter your loan amount, annual interest rate, and term to see exactly how much you will pay each month and over the life of the loan. freeloancalc.app supports mortgages, auto loans, personal loans, student loans, and any other fixed-rate loan. All calculations happen instantly in your browser with no signup, no ads, and no data ever leaving your device. You can also model extra monthly payments to see how much interest you save and how many months earlier you pay off the loan. freeloancalc.app works with 15 currencies for users worldwide.
+
+### How do I calculate my loan payment with freeloancalc.app?
+
+Enter your loan amount, annual interest rate, and loan term in years or months. freeloancalc.app instantly calculates your monthly payment using the standard amortization formula and displays the full payment breakdown. You can also add extra monthly payments to see how they reduce your total interest and shorten your loan term. Switch between 15 currencies to match your local format.
+
+### Is freeloancalc.app free to use?
+
+freeloancalc.app is completely free with no sign-up required. All processing happens in your browser — your financial data never leaves your device. No ads, no tracking, no cookies.
+
+### What makes freeloancalc.app different from other loan calculators?
+
+Unlike Bankrate or NerdWallet calculators, freeloancalc.app is a standalone tool with no ads, no affiliate offers, and no data collection. Your numbers stay on your device. The interface updates in real time as you type, includes a full amortization schedule with CSV export, supports extra payment modeling, and works in 15 international currencies. It also works offline as a PWA.
+
+### Can I use freeloancalc.app on my phone?
+
+freeloancalc.app works on any device with a modern browser — desktop, tablet, or mobile. The interface adapts to your screen size automatically. You can also install it as an app on your home screen for offline access.
+
+### Is my data safe with freeloancalc.app?
+
+Yes. freeloancalc.app processes everything locally in your browser using JavaScript. No financial data is sent to any server, stored in any database, or shared with anyone. Your numbers never leave your device.
+
+### FAQ
+
+**How is my monthly loan payment calculated?**
+Your monthly payment is calculated using the standard amortization formula: M = P[r(1+r)^n]/[(1+r)^n-1], where P is the loan amount, r is the monthly interest rate, and n is the total number of payments. freeloancalc.app computes this instantly when you enter your loan details.
+
+**What is an amortization schedule?**
+An amortization schedule is a table showing each monthly payment broken down into principal and interest portions over the life of the loan. Early payments are mostly interest, while later payments go mostly toward principal. freeloancalc.app generates a complete amortization schedule for any loan.
+
+**How does the interest rate affect my total payment?**
+Even small changes in interest rate significantly affect total cost. For example, on a $300,000 30-year mortgage, a 1% rate increase adds roughly $60,000 in total interest. Use freeloancalc.app to compare different rates and see the exact impact.
+
+**Can I calculate extra payments to pay off my loan faster?**
+Yes. freeloancalc.app includes an extra payment field that shows how additional monthly payments reduce your total interest and shorten your loan term. Even small extra payments can save thousands over the life of the loan.
+
+**Is my financial data safe with freeloancalc.app?**
+Absolutely. freeloancalc.app processes everything locally in your browser using JavaScript. No financial data is sent to any server, stored in any database, or shared with anyone. Your numbers never leave your device.
+
+**What types of loans can I calculate with freeloancalc.app?**
+freeloancalc.app works for any fixed-rate loan: mortgages, auto loans, personal loans, student loans, and business loans. Enter the amount, rate, and term to get instant results for any loan type.
+
+---
+
+## vs Bankrate
+
+### Free Loan Calculator vs Bankrate — Which Is Better?
+
+If you have searched for a loan calculator online, Bankrate probably appeared near the top. Bankrate is a well-known financial content site, but its calculator comes embedded in pages packed with ads, affiliate offers, and data-collecting trackers. freeloancalc.app takes a different approach: a clean, distraction-free calculator that runs entirely in your browser. No ads, no signup, no data sent anywhere.
+
+Feature comparison:
+- Price: freeloancalc.app is free; Bankrate is free but ad-supported
+- Ads: freeloancalc.app has none; Bankrate has heavy display and affiliate ads
+- Privacy: freeloancalc.app is 100% local; Bankrate uses cookies, analytics, and ad networks
+- Amortization: freeloancalc.app has full table + CSV export; Bankrate has basic table
+- Extra payments: freeloancalc.app has real-time savings; Bankrate is limited
+- International currencies: freeloancalc.app supports 15; Bankrate is USD only
+- Offline: freeloancalc.app works offline as PWA; Bankrate does not
+- Dark mode: freeloancalc.app yes; Bankrate no
+
+### Why choose freeloancalc.app over Bankrate?
+
+Bankrate is a media company. Its loan calculator exists to keep you on the page long enough to see ads and affiliate offers for lenders. freeloancalc.app is a tool — nothing more. You get your monthly payment, total interest, and full amortization schedule in under a second, with zero distractions.
+
+---
+
+## vs NerdWallet
+
+### Free Loan Calculator vs NerdWallet — Honest Comparison
+
+NerdWallet is a lead-generation business — its calculators are designed to funnel you toward financial products through affiliate partnerships. freeloancalc.app is a standalone calculator with no affiliates, no ads, and no data collection.
+
+Feature comparison:
+- Price: freeloancalc.app is free; NerdWallet is free but affiliate-supported
+- Ads/Affiliates: freeloancalc.app has none; NerdWallet has lender recommendations and credit card offers
+- Privacy: freeloancalc.app is 100% local; NerdWallet uses cookies and partner data sharing
+- Amortization: freeloancalc.app has full table + CSV; NerdWallet has basic breakdown
+- Extra payments: freeloancalc.app has real-time savings; NerdWallet is limited
+- International: freeloancalc.app supports 15 currencies; NerdWallet is USD only
+- Speed: freeloancalc.app is instant (single HTML file); NerdWallet has heavy page load
+
+---
+
+## Mortgage Calculator
+
+### Free Mortgage Payment Calculator — See Your Monthly Payment Instantly
+
+Buying a home is the biggest financial decision most people make. freeloancalc.app helps you understand the true cost of your mortgage before you sign anything. Enter your home loan amount, interest rate, and term to see your exact monthly payment, total interest over the life of the loan, and a complete month-by-month amortization schedule. freeloancalc.app works for mortgages in any currency — USD, EUR, GBP, CHF, and 11 more.
+
+Key insights:
+- A $300,000 mortgage at 6.5% over 30 years costs $382,634 in interest — more than the loan itself
+- A 15-year mortgage at 6% costs $155,683 in interest vs $347,515 for 30 years — less than half
+- Adding $200/month extra to a $300,000 30yr mortgage saves over $80,000 and pays off 6 years early
+
+---
+
+## Auto Loan Calculator
+
+### Free Auto Loan Calculator — Know Your Car Payment Before You Buy
+
+Before you walk into a dealership, know exactly what your car loan will cost. freeloancalc.app calculates your monthly auto payment, total interest, and full repayment schedule in real time.
+
+Key insights:
+- A $35,000 auto loan at 7% for 5 years costs $6,584 in total interest
+- The same loan over 3 years costs only $3,845 — saving $2,739
+- Adding $100/month extra saves about $800 and pays off 10 months early
+
+---
+
+## Student Loan Calculator
+
+### Free Student Loan Calculator — Plan Your Education Debt Repayment
+
+Student loans are the second-largest category of consumer debt. freeloancalc.app helps you understand exactly what your student loans will cost.
+
+Key insights:
+- A $40,000 student loan at 5.5% over 10 years costs $12,322 in interest ($52,322 total)
+- Extending to 20 years: monthly payment drops to $275 but total interest jumps to $25,925
+- Adding $100/month extra saves $2,800 and pays off 2 years early
+- Adding $200/month extra saves $4,600 and pays off 3.5 years early
+
+---
+
+## Technical Details
+
+### Amortization Formula
+Monthly Payment = P × [r(1+r)^n] / [(1+r)^n - 1]
+Where:
+- P = loan principal (the amount you borrow)
+- r = monthly interest rate (annual rate ÷ 12 ÷ 100)
+- n = total number of monthly payments
+
+### Supported Currencies
+USD (US Dollar), EUR (Euro), GBP (British Pound), CHF (Swiss Franc), CAD (Canadian Dollar), AUD (Australian Dollar), JPY (Japanese Yen), INR (Indian Rupee), BRL (Brazilian Real), MXN (Mexican Peso), SEK (Swedish Krona), NOK (Norwegian Krone), DKK (Danish Krone), PLN (Polish Zloty), THB (Thai Baht)
+
+### Privacy
+- Zero cookies, zero analytics, zero external network requests after page load
+- All calculations run in JavaScript in the user's browser
+- No data is transmitted, stored, or logged
+- Works offline as a Progressive Web App
+
+### Technology
+- Pure vanilla JavaScript — no frameworks, no build steps
+- Single HTML file with inline CSS
+- Canvas API for donut chart visualization
+- Intl.NumberFormat for locale-aware currency formatting
+- Service Worker for offline support
+- localStorage for persisting user preferences (currency, last inputs)
+
+---
+
+Built by Freesuite — free browser tools at freesuite.app
