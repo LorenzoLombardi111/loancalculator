@@ -1,4 +1,4 @@
-const CACHE_NAME = 'freeloancalc-v1';
+const CACHE_NAME = 'freeloancalc-v2';
 const ASSETS = [
     '/',
     '/index.html',
@@ -21,8 +21,27 @@ self.addEventListener('activate', (e) => {
     self.clients.claim();
 });
 
+/* Stale-while-revalidate: serve cached instantly, fetch fresh in background */
 self.addEventListener('fetch', (e) => {
+    if (e.request.method !== 'GET') return;
+
     e.respondWith(
-        caches.match(e.request).then(cached => cached || fetch(e.request))
+        caches.open(CACHE_NAME).then(cache =>
+            cache.match(e.request).then(cached => {
+                const networkFetch = fetch(e.request).then(response => {
+                    if (response.ok) {
+                        cache.put(e.request, response.clone());
+                    }
+                    return response;
+                }).catch(() => cached);
+
+                return cached || networkFetch;
+            })
+        )
     );
+});
+
+/* Notify page when a new SW version is waiting */
+self.addEventListener('message', (e) => {
+    if (e.data === 'skipWaiting') self.skipWaiting();
 });
